@@ -14,9 +14,9 @@ ENV POSTGRESQL_VERSION=9.5 \
     POSTGRESQL_PREV_VERSION=9.4 \
     HOME=/var/lib/pgsql \
     PGUSER=postgres \
-    POSTGRESQL_USER=postgres \
-    POSTGRESQL_PASSWORD=postgres \
-    POSTGRESQL_DATABASE=owf \
+    POSTGRESQL_USER=test \
+    POSTGRESQL_PASSWORD=test \
+    POSTGRESQL_DATABASE=test \
     POSTGRESQL_ADMIN_PASSWORD=postgres
 
 ENV SUMMARY="PostgreSQL is an advanced Object-Relational database management system" \
