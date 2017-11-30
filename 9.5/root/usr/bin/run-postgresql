@@ -31,11 +31,11 @@ if $PG_INITIALIZED ; then
     create_users
 fi
 echo "running script 0"
-psql -f "0_PostgreSQLPrefsInitialCreate.sql"
+psql -f "${CONTAINER_SCRIPTS_PATH}/0_PostgreSQLPrefsInitialCreate.sql"
 echo "running script 1"
-psql -f "1_owf.sql"
+psql -f "${CONTAINER_SCRIPTS_PATH}/1_owf.sql"
 echo "running script 2"
-psql -f "2_config.sql"
+psql -f "${CONTAINER_SCRIPTS_PATH}/2_config.sql"
 
 set_passwords
 echo "passwords set "

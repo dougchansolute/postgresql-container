@@ -60,6 +60,8 @@ ENV CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/postgresql \
 
 COPY root /
 
+COPY *.sql $CONTAINER_SCRIPTS_PATH
+
 # When bash is started non-interactively, to run a shell script, for example it
 # looks for this variable and source the content of this file. This will enable
 # the SCL for all scripts without need to do 'scl enable'.
