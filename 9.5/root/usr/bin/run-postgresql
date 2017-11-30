@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Starting run-postgresql"
 export ENABLE_REPLICATION=${ENABLE_REPLICATION:-false}
 
 set -eu
@@ -11,6 +12,7 @@ set_pgdata
 check_env_vars
 generate_passwd_file
 generate_postgresql_config
+echo "generate_postgresql_config finished"
 
 # Is this brand new data volume?
 PG_INITIALIZED=false
@@ -23,11 +25,13 @@ else
 fi
 
 pg_ctl -w start -o "-h ''"
+echo "-------- pg ctl just called"
 if $PG_INITIALIZED ; then
     migrate_db
     create_users
 fi
 set_passwords
+echo "passwords set "
 pg_ctl stop
 
 unset_env_vars
